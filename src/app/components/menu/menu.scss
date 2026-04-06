@@ -1,0 +1,96 @@
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  padding: 0.25rem 0;
+}
+
+/* ── Section ── */
+.menu-section {
+  padding: 0.5rem 0;
+
+  & + .menu-section {
+    margin-top: 0.25rem;
+  }
+}
+
+.section-label {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Menu Item ── */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  margin: 0.125rem 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: var(--text-secondary, #475569);
+
+  &:hover {
+    background-color: #f1f5f9;
+    color: var(--text-main, #0f172a);
+  }
+
+  &.active {
+    background-color: #f1f5f9;
+    color: var(--text-main, #0f172a);
+    font-weight: 600;
+
+    .menu-icon {
+      color: var(--primary-color, #3b82f6);
+    }
+  }
+}
+
+.menu-icon {
+  font-size: 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--text-muted, #94a3b8);
+  transition: color 0.2s ease;
+
+  .menu-item:hover & {
+    color: var(--text-secondary, #475569);
+  }
+}
+
+.menu-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── Footer / Logout ── */
+.menu-footer {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+.logout-item {
+  color: var(--danger-color, #ef4444);
+
+  .menu-icon {
+    color: var(--danger-color, #ef4444);
+  }
+
+  &:hover {
+    background-color: #fef2f2;
+    color: #dc2626;
+
+    .menu-icon {
+      color: #dc2626;
+    }
+  }
+}

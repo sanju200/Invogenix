@@ -1,0 +1,16 @@
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side" opened="true">
+    <h2 class="text-center">Invogenix</h2>
+    <app-menu></app-menu>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <div class="header-container">
+        <app-header (toggle)="drawer.toggle()"></app-header>
+    </div>
+    <div class="main-layout-container">
+        <app-main-layout-component></app-main-layout-component>
+    </div>
+  </div>
+
+</mat-drawer-container>

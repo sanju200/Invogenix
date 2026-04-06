@@ -1,0 +1,35 @@
+<nav class="menu-container">
+    <!-- General Section -->
+    <div class="menu-section">
+        <span class="section-label">General</span>
+        <div class="menu-item" routerLink="/dashboard" routerLinkActive="active">
+            <mat-icon class="menu-icon">dashboard</mat-icon>
+            <span class="menu-text">Projects Dashboard</span>
+        </div>
+        <div class="menu-item" routerLink="/organization-details" routerLinkActive="active">
+            <mat-icon class="menu-icon">business</mat-icon>
+            <span class="menu-text">Organization Details</span>
+        </div>
+    </div>
+
+    <!-- Admin Section -->
+    <div class="menu-section">
+        <span class="section-label">Admin</span>
+        <div class="menu-item" routerLink="/invite-users" routerLinkActive="active">
+            <mat-icon class="menu-icon">group_add</mat-icon>
+            <span class="menu-text">Invite Users</span>
+        </div>
+        <div class="menu-item" routerLink="/manage-currency" routerLinkActive="active">
+            <mat-icon class="menu-icon">account_balance_wallet</mat-icon>
+            <span class="menu-text">Manage Currency Accounts</span>
+        </div>
+    </div>
+
+    <!-- Logout -->
+    <div class="menu-footer">
+        <div class="menu-item logout-item">
+            <mat-icon class="menu-icon">logout</mat-icon>
+            <span class="menu-text">Logout</span>
+        </div>
+    </div>
+</nav>
