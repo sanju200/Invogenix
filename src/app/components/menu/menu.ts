@@ -8,4 +8,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './menu.html',
   styleUrl: './menu.scss',
 })
-export class Menu {}
+export class Menu {
+  logout() {
+    localStorage.clear();
+  }
+}
