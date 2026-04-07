@@ -1,1 +1,51 @@
-<p>dashboard works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6 col-sm-12">
+            <h4 class="text-bold">Dashboard</h4>
+            <p class="mt-0">Manage working hours and invoices</p>
+        </div>
+        <div class="col-12 col-md-6 col-sm-12 mt-3">
+            <button class="btn btn-primary float-md-end float-sm-start mx-2">Upload Excel</button>
+            <button class="btn btn-primary float-md-end float-sm-start mx-2">New Project</button>
+        </div>
+    </div>
+    <hr/>
+    <div class="main-section mt-4">
+        @for(prj of projects; track prj){
+            <div class="project-card">
+                <div class="card-header">
+                    <div class="row g-0">
+                        <div class="col-9">
+                            <div class="fw-semibold fs-6 mb-1">
+                                {{prj.name}}
+                            </div>
+                            <div class="fs-7 text-muted fw-semibold">
+                                {{prj.customerName}}
+                            </div>
+                            @if((prj.genericExcelHasDataRows && prj.employeeExcelHasDataRows) || prj.employees.length > 0){
+                               <div class="emp-badge-green mt-2">
+                                     Excel data imported
+                               </div>
+                            }@else{
+                                <div class="emp-badge-red mt-2"> 
+                                    No excel data imported
+                                </div>
+                                }
+                        </div>
+                        <div class="col-3 d-flex gap-2 justify-content-end">
+                            <fa-icon [icon]="faEdit" class="text-primary mt-1" />
+                            <fa-icon [icon]="faTrash" class="text-danger mt-1" />
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="card-body">
+                    <div class="button-group">
+                        <button class="btn btn-primary w-50 rounded-pill">Preview</button>
+                        <button class="btn btn-secondary w-50 rounded-pill">Download</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

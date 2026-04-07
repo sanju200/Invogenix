@@ -1,0 +1,96 @@
+.header-dash{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.button-group{
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.project-name{
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.client-name{
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.icon-group{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0;
+}
+
+.main-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    @media (min-width: 769px) and (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1201px) {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+.project-card{
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    background-color: var(--surface-color);
+    transition: all 0.2s ease-in-out;
+    border-top: 5px solid var(--primary-color);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 100%;
+    width: 100%;
+
+    &:hover{
+        transform: translateY(-4px);
+        box-shadow: rgba(100, 100, 111, 0.3) 0px 10px 40px 0px;
+    }
+}
+
+.emp-badge-red{
+    border: 1px solid #dc2626;
+    color: #b91c1c;
+    border-radius: 1rem;
+    background-color: #fef2f2;
+    font-size: 0.65rem;
+    width: fit-content;
+    padding: 0.1rem 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.emp-badge-green{
+    border: 1px solid #16a34a;
+    color: #15803d;
+    border-radius: 1rem;
+    background-color: #f0fdf4;
+    font-size: 0.65rem;
+    width: fit-content;
+    padding: 0.1rem 0.3rem;
+    margin-top: 0.5rem;
+}
