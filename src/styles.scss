@@ -5,6 +5,9 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 @use '../style/defualtcompo.scss';
+@import 'bootstrap/scss/bootstrap';
+
+
 
 html {
   height: 100%;
@@ -36,4 +39,3 @@ body {
 .container{
   height: 100%;
 }
-/* You can add global styles to this file, and also import other style files */
