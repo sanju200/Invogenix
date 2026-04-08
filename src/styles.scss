@@ -39,3 +39,20 @@ body {
 .container{
   height: 100%;
 }
+.app-card{
+  border-top: 5px solid var(--primary-color);
+  padding: 1rem;
+}
+
+.form-group{
+  
+  .form-control{
+    height: 2.5rem;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    &:focus{
+      border-color: var(--primary-color);
+    }
+  }
+}
