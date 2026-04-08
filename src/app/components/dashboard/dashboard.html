@@ -5,7 +5,7 @@
             <p class="mt-0">Manage working hours and invoices</p>
         </div>
         <div class="col-12 col-md-6 col-sm-12 mt-3">
-            <button class="btn btn-primary float-md-end float-sm-start mx-2"><fa-icon class="me-2" [icon]="faPlus"></fa-icon>New Project</button>
+            <button class="btn btn-primary float-md-end float-sm-start mx-2"(click)="navigatetoCreateProject()"><fa-icon class="me-2" [icon]="faPlus"></fa-icon>New Project</button>
             <button class="btn btn-primary float-md-end float-sm-start mx-2" (click)="openDialog()"><fa-icon class="me-2" [icon]="faUpload"></fa-icon> Upload Excel</button>
         </div>
     </div>

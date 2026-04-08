@@ -5,6 +5,7 @@ import { faEdit, faPlus, faTrash, faUpload } from '@fortawesome/free-solid-svg-i
 import { projectData } from '../../dummyData/projectData';
 import { UploadExcel } from '../upload-excel/upload-excel';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +22,8 @@ export class Dashboard {
   projects: any = projectData;
   readonly dialog = inject(MatDialog);
 
+  constructor(public router: Router) { }
+
   openDialog() {
     const dialogRef = this.dialog.open(UploadExcel, {
       width: '60vw',
@@ -30,6 +33,10 @@ export class Dashboard {
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  navigatetoCreateProject() {
+    this.router.navigate(['/create-project']);
   }
 }
 

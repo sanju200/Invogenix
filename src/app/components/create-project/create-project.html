@@ -1,0 +1,103 @@
+<div class="px-4">
+    <div>
+    <button class="btn">Back to Project</button>
+</div>
+<div class="app-card p-0 m-1 py-3 ">
+    <form>
+    <h5 class="px-4">Create New Project</h5>
+    <hr/>
+    <div class="create-project-card px-4">
+        <div class="row">
+            <h5 class="text-muted">Project Information</h5>
+            <hr class="mx-2"/>
+            <div class="col-md-4 form-group">
+                <label for="project-name">Project Name</label>
+                <input type="text" id="project-name" class="form-control" placeholder="e.g., InvoiceGenix">
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="description">Description</label>
+                <input type="text" id="description" class="form-control" placeholder="e.g., Software Service Provider">
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="description">Unique Project Identifier</label>
+                <input type="text" id="description" class="form-control" placeholder="e.g., INV-001">
+            </div>
+        </div> 
+
+        <div class="row">
+            <h5 class="text-muted">Customer Information</h5>
+            <hr class="mx-2"/>
+            <div class="col-md-4 form-group">
+                <label for="project-name">Customer Name</label>
+                <input class="form-control" type="text" id="project-name" placeholder="e.g., John Doe">
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="contact-person">Contact Person</label>
+                <input class="form-control" type="text" id="contact-person" placeholder="e.g., Emma Watson">
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="email">Email</label>
+                <input class="form-control" type="text" id="email" placeholder="e.g., contact@abcdcorp.com">
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="phone">Phone Number</label>
+                <input class="form-control" type="text" id="phone" placeholder="+1 555 334 4532">
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="email">Tax Identification Type</label>
+                <select class="form-control" (change)="onSelectChange($event)">
+                    <option value="VAT">VAT</option>
+                    <option value="fiscalId">Fiscal Id</option>
+                    
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="email">{{TaxIdTypeLabel}}</label>
+                <input type="text" id="email" class="form-control" placeholder="{{TaxIdTypeLabel}}">
+            </div>
+        </div>
+        
+        <div class="row">
+            <h5 class="text-muted">Invoice Information</h5>
+            <hr class="mx-2"/>
+            <div class="col-md-4 form-group">
+                <label for="project-name">Currency</label>
+                <select class="form-control">
+                    @for(currency of currencyData; track currency){
+                        <option [value]="currency.code">{{currency.label}}</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="po-number">PO Number</label>
+                <input type="text" id="po-number" class="form-control" placeholder="Purchase Order Number">
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="net-terms">Net Terms</label>
+                <input type="number"  value="30" id="net-terms" class="form-control">
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="agreement-type">Agreement Type</label>
+                <select class="form-control" (change)="onAgreementChange($event)">
+                    <option value="SOW">SOW</option>
+                    <option value="MSA">MSA</option>
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="net-terms">{{agreementTypeLabel}}</label>
+                <input type="text" id="net-terms" class="form-control" placeholder="{{agreementTypeLabel}}">
+            </div>
+            <div class="col-md-4 form-group">
+                <label for="net-terms">Invoice Purpose</label>
+                <input type="text" id="net-terms" class="form-control" placeholder="e.g., Software Service Provider">
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="d-flex justify-content-end px-4 mt-2">
+        <button class="btn btn-primary">Create Project</button>
+    </div>
+    </form>
+</div>
+
+</div>

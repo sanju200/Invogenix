@@ -32,6 +32,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./components/manage-currency/manage-currency').then(m => m.ManageCurrency)
             },
             {
+                path: 'create-project',
+                loadComponent: () => import('./components/create-project/create-project').then(m => m.CreateProject)
+            },
+            {
                 path: '',
                 redirectTo: 'dashboard',
                 pathMatch: 'full'
