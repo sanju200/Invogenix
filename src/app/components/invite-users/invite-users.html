@@ -1,1 +1,71 @@
-<p>invite-users works!</p>
+<div class="m-1">
+    <div class="project-card p-4 m-2">
+    <h5>Invite User</h5>
+    <hr/>
+    <div >
+        <form>
+           <div class="row">
+             <div class="col-md-6 col-sm-12 col-12 form-group">
+                <label>Invitee Email</label>
+                <input type="email" class="form-control" placeholder="name@example.com">
+             </div>
+             <div class="col-2 form-group">
+                <label>Expires (days)</label>
+                <input type="number" class="form-control" value="14">
+             </div>
+             <div class="col-2 form-group">
+                <label>Role</label>
+                <select class="form-control">
+                    <option value="User">User</option>
+                    <option value="Admin">Admin</option>
+                </select>
+             </div>
+             <div class="col-2 form-group mt-4">
+                <button class="btn btn-primary mt-2">Create Invite</button>
+             </div>
+             
+           </div>
+        </form>
+    </div>
+    
+</div>
+
+<div class="project-card p-4 my-4 mx-2">
+    <h5>Invitations</h5>
+    <hr/>
+    <div >
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Created</th>
+                    <th scope="col">Expires</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody class="">
+                @for(invt of invitations; track invt){
+                    <tr scope="row">
+                        <td scope="col">{{invt.email}}</td>
+                        <td scope="col">{{invt.isAdmin ? 'Admin' : 'User' }}</td>
+                        <td scope="col">{{invt.createdAt}}</td>
+                        <td scope="col">{{invt.expiresAt}}</td>
+                        <td scope="col">{{invt.usedAt ? 'Used' : 'Active'}}</td>
+                        <td scope="col" class="d-flex align-items-center">
+                           <button class="btn btn-link p-0 me-3" (click)="copyText(invt.inviteLink, tooltip)" matTooltip="Copied!" #tooltip="matTooltip" [matTooltipDisabled]="true">
+                            <fa-icon [icon]="faCopy"></fa-icon> 
+                           </button> 
+                            
+                           <button class="btn btn-link link-danger p-0">
+                                <fa-icon [icon]="faTrash"></fa-icon>
+                           </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
