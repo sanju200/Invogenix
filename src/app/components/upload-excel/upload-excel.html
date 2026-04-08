@@ -24,15 +24,31 @@
         </div>
       </div>
       
-      <div class="upload-excel row mt-4 rounded text-center px-2 py-4">
-        <div class="example-box" cdkDrag>
-          <fa-icon [icon]="faFile" class="fileIcon"></fa-icon>
-          <h5>Upload Excel File</h5>
-          <p>Drag and drop your Excel file here or click to browse</p>
-          <button class="btn btn-success mt-2 py-2 px-4"><fa-icon [icon]="faUpload"></fa-icon> Upload Files</button>
-          <p class="fs-7">Supports .xlsx and .xls files</p>
+      @if(!isUploaded){
+        <div class="upload-excel row mt-4 rounded text-center px-2 py-4"  (drop)="onFileDrop($event)" (dragover)="$event.preventDefault()">
+          <div class="example-box" cdkDrag>
+            <fa-icon [icon]="faFile" class="fileIcon"></fa-icon>
+            <h5>Upload Excel File</h5>
+            <p>Drag and drop your Excel file here or click to browse</p>
+            <input type="file" (change)="onFileChange($event)" accept=".xls,.xlsx" hidden #fileInput/>
+            <button (click)="fileInput.click()" class="btn btn-success mt-2 py-2 px-4"><fa-icon [icon]="faUpload"></fa-icon> Upload Files</button>
+            <p class="fs-7">Supports .xlsx and .xls files</p>
+          </div>
         </div>
+      }@else{
+        <div class="">
+        <p>File uploaded successfully ✅</p>
+  
+        <table>
+          <tr *ngFor="let row of excelData">
+            <td *ngFor="let item of row | keyvalue">
+              {{ item.value }}
+            </td>
+          </tr>
+        </table>
       </div>
+      }
+
     </div>
   }@else {
     <div>
