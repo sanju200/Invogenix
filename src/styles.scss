@@ -5,7 +5,7 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 @use '../style/defualtcompo.scss';
-@import 'bootstrap/scss/bootstrap';
+@use 'bootstrap/scss/bootstrap';
 
 
 
@@ -70,4 +70,16 @@ body {
         transform: translateY(-4px);
         box-shadow: rgba(100, 100, 111, 0.3) 0px 10px 40px 0px;
     }
+}
+
+.table > :not(caption) > * > * {
+  padding: 0.75rem 0.5rem !important;
+}
+
+.mat-mdc-form-field-infix {
+  padding: 0.75rem 0.5rem !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
