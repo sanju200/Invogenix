@@ -1,0 +1,53 @@
+<div class="px-4 py-2">
+  <div class="d-inline-flex align-items-center">
+  <div class="col-md-9 col-sm-12">
+    <h2 class="p-0 m-0" mat-dialog-title>Upload Excel</h2>
+<p class="mt-0">Upload an Excel file containing employee data with project assignments. The system will automatically match employees to existing projects.</p>
+  </div>
+  <div class="col-md-3 col-sm-12 gap-2 d-flex justify-content-end">
+   <mat-button-toggle-group name="fontStyle">
+     <button [ngClass]="!isCustom ? 'btn btn-primary' : 'btn border'" value="default" (click)="toggleContent()">Default</button>
+     <button  [ngClass]="isCustom ? 'btn btn-primary' : 'btn border'" value="custom" (click)="toggleContent()">Custom</button>
+  </mat-button-toggle-group>
+  </div>
+</div>
+<mat-dialog-content>
+  @if(!isCustom){
+    <div>
+      <div class="border bg-blue-50 rounded p-2 border-primary row align-items-center">
+        <div class="col-9">
+          <h5 class="text-primary-emphasis fw-semibold mb-0">Need a template ?</h5>
+          <p class="text-primary">Download our sample Excel template to see the expected format</p>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-primary float-end "><fa-icon [icon]="faDownload"></fa-icon> Download Template</button>
+        </div>
+      </div>
+      
+      <div class="upload-excel row mt-4 rounded text-center px-2 py-4">
+        <div class="example-box" cdkDrag>
+          <fa-icon [icon]="faFile" class="fileIcon"></fa-icon>
+          <h5>Upload Excel File</h5>
+          <p>Drag and drop your Excel file here or click to browse</p>
+          <button class="btn btn-success mt-2 py-2 px-4"><fa-icon [icon]="faUpload"></fa-icon> Upload Files</button>
+          <p class="fs-7">Supports .xlsx and .xls files</p>
+        </div>
+      </div>
+    </div>
+  }@else {
+    <div>
+
+    </div>
+  }
+  
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton mat-dialog-close>Cancel</button>
+  @if(!isCustom){
+    <button matButton [mat-dialog-close]="true" cdkFocusInitial>Upload Excel</button>
+  }@else {
+    <button matButton [mat-dialog-close]="true" cdkFocusInitial>Create Project Copy</button>
+  }
+</mat-dialog-actions>
+
+</div>
