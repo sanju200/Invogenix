@@ -1,13 +1,12 @@
 import { Component, ChangeDetectorRef, NgZone } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
-import { ImageUpload } from '../common/image-upload/image-upload';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-organization-details',
   standalone: true,
-  imports: [FontAwesomeModule, ImageUpload],
+  imports: [FontAwesomeModule],
   templateUrl: './organization-details.html',
   styleUrl: './organization-details.scss',
 })
